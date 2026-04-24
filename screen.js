@@ -1527,9 +1527,10 @@
                 const finger = fingers[i];
                 const topY = nutY - 6;
 
+                const normalizeFrets = maxFret > 5;
                 let relativeFret = null;
                 if (typeof fret === 'number' && fret > 0) {
-                    relativeFret = fret - minFret + 1;
+                    relativeFret = normalizeFrets ? fret - minFret + 1 : fret;
                 }
 
                 chordCtx.textAlign = 'center';
